@@ -3,7 +3,10 @@ guid: 88bac66c10046874a9171a6eac66e394
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - exposureClip: {instanceID: 0}
+  - completedSession: {instanceID: 0}
+  - _videoPlayer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

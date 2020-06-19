@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
-public class SettingsMenu : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public VideoPlayer vp;
 
 
-    public void PauseMenu()
+    public void UsePauseMenu()
     {
         pauseMenu.SetActive(true);
         vp.Pause();
