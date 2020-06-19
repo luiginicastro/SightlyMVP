@@ -1,11 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
+using System.Linq;
 using TMPro;
 
 
 public class videoPlayer360 : MonoBehaviour
 {
+    //[System.Serializable]
+    //public struct ExposureSession
+    //{
+    //    public string name;
+    //    public VideoClip exposureClip;
+    //    public GameObject completedSession;
+    //    public float videoYRotation;
+    //}
+
+    //[SerializeField] List<ExposureSession> __exposureSessionList = new List<ExposureSession>();
+
+    bool videoCompleted = false;
+
+    public GameObject _positionHandle;
+
+    
+
     public RenderTexture videoSkyboxTemplate; // place your RT360Video texture in here
     public Material skyboxTemplate; // place your Skybox material in here
     public Material videoSkybox; // place your 360Material here
@@ -15,11 +34,12 @@ public class videoPlayer360 : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     public bool InSession;
 
+    private exposureSession _exposureSession;
 
     [SerializeField] UnityEngine.Video.VideoPlayer _player; // the 360 videoplayer
 
     
-    private void Start()
+    private void Update()
     {
         _player.loopPointReached += EndReached;
     }
@@ -36,7 +56,7 @@ public class videoPlayer360 : MonoBehaviour
     }
 
     public void PlayVideo() // this plays the video player
-    {
+    { 
         _player.Play();
         pauseMenu.SetActive(false);
         InSession = true;
@@ -76,6 +96,7 @@ public class videoPlayer360 : MonoBehaviour
         _player.frame = 0;
         _player.clip = null;
     }
+
     public void pauseMenuTriggered()
     {
         if (InSession)
@@ -94,11 +115,12 @@ public class videoPlayer360 : MonoBehaviour
     private void OnVideoEnd() // this makes the session false, stops the video, resets the skybox, turns on the room and slides
     {
         InSession = false;
-
         StopVideo();
+        RenderSettings.skybox = skyboxTemplate;
         ReleaseRenderTexture(); // this resets the texture for the Skybox after each video
         structure.SetActive(true);
         contentSlides.SetActive(true);
+        pauseMenu.SetActive(false);
     }
 
     public void ReleaseRenderTexture() // this is how it resets the texture for the skybox
@@ -119,5 +141,10 @@ public class videoPlayer360 : MonoBehaviour
         structure.SetActive(true);
         contentSlides.SetActive(true);
         pauseMenu.SetActive(false);
+    }
+
+    private void RotateOrientation(float yRot)
+    {
+        _positionHandle.transform.eulerAngles = new Vector3(_positionHandle.transform.eulerAngles.x, yRot, _positionHandle.transform.eulerAngles.z);
     }
 }
