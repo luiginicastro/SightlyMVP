@@ -10,6 +10,7 @@ public class exposureSession : MonoBehaviour
     public GameObject completedSession;
     public float videoRotation;
     public GameObject _rigPosition;
+    public Quaternion origRot;
 
     public VideoPlayer _videoPlayer;
 
@@ -17,10 +18,11 @@ public class exposureSession : MonoBehaviour
     {
         _videoPlayer = GameObject.FindGameObjectWithTag("360Camera").GetComponent<VideoPlayer>();
         _rigPosition = GameObject.FindGameObjectWithTag("XRRig");
+
     }
 
     public void Update()
-    {
+    { 
         _videoPlayer.loopPointReached += EndReached;
     }
 
@@ -40,7 +42,7 @@ public class exposureSession : MonoBehaviour
         OnVideoEnd();
     }
 
-    private void RotateOrientation(float yRot)
+    public void RotateOrientation(float yRot)
     {
         _rigPosition.transform.eulerAngles = new Vector3(_rigPosition.transform.eulerAngles.x, yRot, _rigPosition.transform.eulerAngles.z);
     }

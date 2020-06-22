@@ -9,31 +9,29 @@ using TMPro;
 public class videoPlayer360 : MonoBehaviour
 {
 
-    bool videoCompleted = false;
-
-    public GameObject _positionHandle;
-
     public RenderTexture videoSkyboxTemplate; // place your RT360Video texture in here
     public Material skyboxTemplate; // place your Skybox material in here
     public Material videoSkybox; // place your 360Material here
-    [SerializeField] private GameObject settingsMenu;
+    
     [SerializeField] private GameObject structure;
     [SerializeField] private GameObject contentSlides;
     [SerializeField] private GameObject pauseMenu;
-    public bool InSession;
 
-    public exposureSession _exposureSession;
+    public bool InSession; // this determines if the user is in a session so scripts can run
+
+    public RigRotation _rigRot;
+    
+
 
     [SerializeField] UnityEngine.Video.VideoPlayer _player; // the 360 videoplayer
 
-    
     private void Update() //COME BACK TO FIX THIS SO THAT THIS FUNCTION WORKS WHEN VIDEO ENDS
     {
         _player.loopPointReached += EndReached;
         
     }
 
-    public void DelayedPlay(float secondsDelay)
+    public void DelayedPlay(float secondsDelay) 
     {
         StartCoroutine(WaitToPlay(secondsDelay));
     }
@@ -84,10 +82,10 @@ public class videoPlayer360 : MonoBehaviour
         _player.Stop();
         _player.frame = 0;
         _player.clip = null;
-        _exposureSession._rigPosition.transform.eulerAngles = new Vector3(_exposureSession._rigPosition.transform.eulerAngles.x, 90, _exposureSession._rigPosition.transform.eulerAngles.z);
+        _rigRot.origPos();
     }
 
-    public void pauseMenuTriggered()
+    public void pauseMenuTriggered() // if the user is in a session they can pause the video
     {
         if (InSession)
         {
@@ -111,7 +109,7 @@ public class videoPlayer360 : MonoBehaviour
         structure.SetActive(true);
         contentSlides.SetActive(true);
         pauseMenu.SetActive(false);
-        _exposureSession._rigPosition.transform.eulerAngles = new Vector3(_exposureSession._rigPosition.transform.eulerAngles.x, 90, _exposureSession._rigPosition.transform.eulerAngles.z);
+        _rigRot.origPos();
     }
 
     public void ReleaseRenderTexture() // this is how it resets the texture for the skybox
@@ -132,8 +130,9 @@ public class videoPlayer360 : MonoBehaviour
         structure.SetActive(true);
         contentSlides.SetActive(true);
         pauseMenu.SetActive(false);
-        _exposureSession._rigPosition.transform.eulerAngles = new Vector3(_exposureSession._rigPosition.transform.eulerAngles.x, 90, _exposureSession._rigPosition.transform.eulerAngles.z);
+        _rigRot.origPos();
     }
 
+   
     
 }
