@@ -11,8 +11,14 @@ public class PauseMenu : MonoBehaviour
 
     public void UsePauseMenu()
     {
-        pauseMenu.SetActive(true);
-        vp.Pause();
+            pauseMenu.SetActive(true);
+            vp.Pause();
     }
-    
+
+    public void PauseMenuOff()
+    {
+            pauseMenu.SetActive(false);
+            vp.Play();
+    }
+
 }

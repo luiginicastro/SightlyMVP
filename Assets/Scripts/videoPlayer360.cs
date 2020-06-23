@@ -21,11 +21,9 @@ public class videoPlayer360 : MonoBehaviour
 
     public RigRotation _rigRot;
     
-
-
     [SerializeField] UnityEngine.Video.VideoPlayer _player; // the 360 videoplayer
 
-    private void Update() //COME BACK TO FIX THIS SO THAT THIS FUNCTION WORKS WHEN VIDEO ENDS
+    private void Update() 
     {
         _player.loopPointReached += EndReached;
         

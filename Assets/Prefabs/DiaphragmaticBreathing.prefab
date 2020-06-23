@@ -257,6 +257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6c65e2cb81d714c8bd279582df6f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Breathing: []
+  BreathingAnim: []
 --- !u!1 &8988407335024486010
 GameObject:
   m_ObjectHideFlags: 0

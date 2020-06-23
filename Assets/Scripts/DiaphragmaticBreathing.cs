@@ -18,6 +18,12 @@ public class DiaphragmaticBreathing : MonoBehaviour
         for (var i = 0; i < Breathing.Length; i += 1)
         {
             Breathing[i].SetBool("Play", true);
+            Breathing[i].SetBool("Stop", false);
         }
+    }
+
+    public void StopAnim()
+    {
+          
     }
 }
