@@ -24,7 +24,7 @@ namespace Michsky.UI.ModernUIPack
             if (isOn == false)
             {
                 loadingBar.fillAmount = currentPercent / 100;
-                textPercent.text = ((int)currentPercent).ToString("F0") + "%";
+                textPercent.text = ((int)currentPercent).ToString("F0");
             }
         }
 
@@ -45,14 +45,14 @@ namespace Michsky.UI.ModernUIPack
                     currentPercent = 100;
 
                 loadingBar.fillAmount = currentPercent / 100;
-                textPercent.text = ((int)currentPercent).ToString("F0") + "%";
+                textPercent.text = ((int)currentPercent).ToString("F0");
             }
         }
 
         public void UpdateUI()
         {
             loadingBar.fillAmount = currentPercent / 100;
-            textPercent.text = ((int)currentPercent).ToString("F0") + "%";
+            textPercent.text = ((int)currentPercent).ToString("F0");
         }
     }
 }
