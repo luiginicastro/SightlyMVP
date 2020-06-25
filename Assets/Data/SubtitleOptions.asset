@@ -20,8 +20,8 @@ MonoBehaviour:
   objectPadding: 0.25
   fontSize: 30
   fontColor: {r: 1, g: 1, b: 1, a: 1}
-  fontAsset: {fileID: 11400000, guid: 17dbea26b7c6ff14ea0b0f779e2daa56, type: 2}
-  fontMaterial: {fileID: 3906450012447868169, guid: 17dbea26b7c6ff14ea0b0f779e2daa56,
+  fontAsset: {fileID: 11400000, guid: d4f67fadc0c295748bfebbeda0a9575d, type: 2}
+  fontMaterial: {fileID: -120649810298946702, guid: d4f67fadc0c295748bfebbeda0a9575d,
     type: 2}
   textAlignment: 4098
   showBackground: 1

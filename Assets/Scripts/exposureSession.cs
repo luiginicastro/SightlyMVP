@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
+using A11YTK;
 
 public class exposureSession : MonoBehaviour
 {
@@ -12,12 +14,15 @@ public class exposureSession : MonoBehaviour
     public GameObject _rigPosition;
     public Quaternion origRot;
 
+    public TextAsset srtFile;
+
     public VideoPlayer _videoPlayer;
 
     public void Start()
     {
         _videoPlayer = GameObject.FindGameObjectWithTag("360Camera").GetComponent<VideoPlayer>();
         _rigPosition = GameObject.FindGameObjectWithTag("XRRig");
+        
 
     }
 
@@ -30,6 +35,7 @@ public class exposureSession : MonoBehaviour
     {
         _videoPlayer.clip = exposureClip;
         RotateOrientation(videoRotation);
+        _videoPlayer.GetComponent<SubtitleVideoPlayerController>().subtitleTextAsset = srtFile;
     }
 
     public void OnVideoEnd() // this makes the session false, stops the video, resets the skybox, turns on the room and slides
