@@ -17,8 +17,9 @@ public class videoPlayer360 : MonoBehaviour
     [SerializeField] private GameObject contentSlides;
     [SerializeField] private GameObject pauseMenu;
 
-    public bool InSession; // this determines if the user is in a session so scripts can run
+    public bool inSession; // this determines if the user is in a session so scripts can run
 
+    public GameObject handTimer;
     public RigRotation _rigRot;
     
     [SerializeField] UnityEngine.Video.VideoPlayer _player; // the 360 videoplayer
@@ -26,7 +27,6 @@ public class videoPlayer360 : MonoBehaviour
     private void Update() 
     {
         _player.loopPointReached += EndReached;
-        
     }
 
     public void DelayedPlay(float secondsDelay) 
@@ -44,30 +44,33 @@ public class videoPlayer360 : MonoBehaviour
     { 
         _player.Play();
         pauseMenu.SetActive(false);
-        InSession = true;
+        inSession = true;
         videoTransition();
     }
 
     private void videoTransition()
     {
-        if (InSession == true)
+        if (inSession == true)
         {
             structure.SetActive(false);
             contentSlides.SetActive(false);
             RenderSettings.skybox = videoSkybox;
+            handTimer.SetActive(true);
         }
         
-        else if (InSession == false)
+        else if (inSession == false)
         {
             structure.SetActive(true);
             contentSlides.SetActive(true);
             RenderSettings.skybox = skyboxTemplate;
+            handTimer.SetActive(false);
         }
     }
 
     public void PauseVideo() // pauses the video for user
     {
         _player.Pause();
+        handTimer.SetActive(false);
     }
 
     public void ResetVideo() // resets the video
@@ -81,11 +84,12 @@ public class videoPlayer360 : MonoBehaviour
         _player.frame = 0;
         _player.clip = null;
         _rigRot.origPos();
+        handTimer.SetActive(false);
     }
 
     public void pauseMenuTriggered() // if the user is in a session they can pause the video
     {
-        if (InSession)
+        if (inSession)
         {
             PauseVideo();
             pauseMenu.SetActive(true);
@@ -100,7 +104,7 @@ public class videoPlayer360 : MonoBehaviour
 
     private void OnVideoEnd() // this makes the session false, stops the video, resets the skybox, turns on the room and slides
     {
-        InSession = false;
+        inSession = false;
         StopVideo();
         RenderSettings.skybox = skyboxTemplate;
         ReleaseRenderTexture(); // this resets the texture for the Skybox after each video
@@ -108,6 +112,7 @@ public class videoPlayer360 : MonoBehaviour
         contentSlides.SetActive(true);
         pauseMenu.SetActive(false);
         _rigRot.origPos();
+        handTimer.SetActive(false);
     }
 
     public void ReleaseRenderTexture() // this is how it resets the texture for the skybox
@@ -121,7 +126,7 @@ public class videoPlayer360 : MonoBehaviour
 
     public void ExitVideoTriggered() //if the user chooses to leave video early it makes the session false, stops the video, resets the skybox, turns on the room and slides
     {
-        InSession = false;
+        inSession = false;
         StopVideo();
         RenderSettings.skybox = skyboxTemplate;
         ReleaseRenderTexture(); // this resets the texture for the Skybox after each video
@@ -129,6 +134,7 @@ public class videoPlayer360 : MonoBehaviour
         contentSlides.SetActive(true);
         pauseMenu.SetActive(false);
         _rigRot.origPos();
+        handTimer.SetActive(false);
     }
 
    

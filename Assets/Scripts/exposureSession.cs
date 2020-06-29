@@ -35,6 +35,7 @@ public class exposureSession : MonoBehaviour
     {
         _videoPlayer.clip = exposureClip;
         RotateOrientation(videoRotation);
+
         _videoPlayer.GetComponent<SubtitleVideoPlayerController>().subtitleTextAsset = srtFile;
     }
 
