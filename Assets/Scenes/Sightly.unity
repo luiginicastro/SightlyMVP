@@ -35717,7 +35717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &673559541
 RectTransform:
   m_ObjectHideFlags: 0
@@ -77637,6 +77637,10 @@ MonoBehaviour:
   timeElapsedSeconds: {fileID: 339269372}
   totalTimeMinutes: {fileID: 1976532720}
   totalTimeSeconds: {fileID: 816340163}
+  handTimeElapsedMinutes: {fileID: 1542712567}
+  handTimeElapsedSeconds: {fileID: 492426533}
+  handTotalTimeMinutes: {fileID: 1604323656}
+  handTotalTimeSeconds: {fileID: 1945079571}
   _player: {fileID: 1526554953}
 --- !u!114 &1526554955
 MonoBehaviour:
@@ -113429,7 +113433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Interview
-  exposureClip: {fileID: 32900000, guid: b1e6890073b95794e8a7f8ae6735a3bc, type: 3}
+  exposureClip: {fileID: 32900000, guid: 7f730524277235a439865850aaf0ef06, type: 3}
   completedSession: {fileID: 1043307710}
   videoRotation: 0
   _rigPosition: {fileID: 0}

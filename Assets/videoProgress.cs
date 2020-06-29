@@ -7,12 +7,17 @@ using TMPro;
 
 public class videoProgress : MonoBehaviour
 {
-  
+    [Header("Pause Menu Timer")]
     public TextMeshProUGUI timeElapsedMinutes;
     public TextMeshProUGUI timeElapsedSeconds;
-
     public TextMeshProUGUI totalTimeMinutes;
     public TextMeshProUGUI totalTimeSeconds;
+
+    [Header("Hand Timer")]
+    public TextMeshProUGUI handTimeElapsedMinutes;
+    public TextMeshProUGUI handTimeElapsedSeconds;
+    public TextMeshProUGUI handTotalTimeMinutes;
+    public TextMeshProUGUI handTotalTimeSeconds;
 
     public VideoPlayer _player;
 
@@ -39,6 +44,9 @@ public class videoProgress : MonoBehaviour
 
         timeElapsedMinutes.text = minutes;
         timeElapsedSeconds.text = seconds;
+
+        handTimeElapsedMinutes.text = minutes;
+        handTimeElapsedSeconds.text = seconds;
     }
 
     void SetTotalTimeUI()
@@ -48,6 +56,9 @@ public class videoProgress : MonoBehaviour
 
         totalTimeMinutes.text = minutes;
         totalTimeSeconds.text = seconds;
+
+        handTotalTimeMinutes.text = minutes;
+        handTotalTimeSeconds.text = seconds;
     }
 
 }
