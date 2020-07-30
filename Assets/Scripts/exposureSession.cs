@@ -22,8 +22,6 @@ public class exposureSession : MonoBehaviour
     {
         _videoPlayer = GameObject.FindGameObjectWithTag("360Camera").GetComponent<VideoPlayer>();
         _rigPosition = GameObject.FindGameObjectWithTag("XRRig");
-        
-
     }
 
     public void Update()
@@ -35,8 +33,8 @@ public class exposureSession : MonoBehaviour
     {
         _videoPlayer.clip = exposureClip;
         RotateOrientation(videoRotation);
-
         _videoPlayer.GetComponent<SubtitleVideoPlayerController>().subtitleTextAsset = srtFile;
+
     }
 
     public void OnVideoEnd() // this makes the session false, stops the video, resets the skybox, turns on the room and slides
@@ -53,4 +51,5 @@ public class exposureSession : MonoBehaviour
     {
         _rigPosition.transform.eulerAngles = new Vector3(_rigPosition.transform.eulerAngles.x, yRot, _rigPosition.transform.eulerAngles.z);
     }
+
 }

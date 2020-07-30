@@ -9,5 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Sightly.unity
     guid: 79e5be770f6385746b27d847885a81c4
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b9996d8e4901c99428ab58b7ef155a1d,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 368c0fc7cae50b84a824c40f5a961940,
       type: 2}

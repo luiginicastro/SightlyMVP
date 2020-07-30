@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public VideoPlayer vp;
+    public GameObject anim;
 
 
     public void UsePauseMenu()

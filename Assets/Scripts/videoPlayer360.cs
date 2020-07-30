@@ -24,7 +24,8 @@ public class videoPlayer360 : MonoBehaviour
     
     [SerializeField] UnityEngine.Video.VideoPlayer _player; // the 360 videoplayer
 
-    private void Update() 
+
+    private void Start() 
     {
         _player.loopPointReached += EndReached;
     }
@@ -41,7 +42,7 @@ public class videoPlayer360 : MonoBehaviour
     }
 
     public void PlayVideo() // this plays the video player
-    { 
+    {
         _player.Play();
         pauseMenu.SetActive(false);
         inSession = true;
@@ -104,6 +105,7 @@ public class videoPlayer360 : MonoBehaviour
 
     private void OnVideoEnd() // this makes the session false, stops the video, resets the skybox, turns on the room and slides
     {
+        Debug.Log("OnVideoEnd");
         inSession = false;
         StopVideo();
         RenderSettings.skybox = skyboxTemplate;

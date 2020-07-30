@@ -169,12 +169,12 @@ public class MainMenuManager : MonoBehaviour
     public void PublicSpeakingLevels()  // reveals...
     {
         interviews.SetActive(false);
-        classQuestion.SetActive(true);
+        classQuestion.SetActive(false);
         socialGatherings.SetActive(false);
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
-        publicSpeaking.SetActive(false);
+        publicSpeaking.SetActive(true);
 
         LogIn.SetActive(false);
         SignUp.SetActive(false);

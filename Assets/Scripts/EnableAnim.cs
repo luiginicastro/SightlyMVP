@@ -12,7 +12,6 @@ public class EnableAnim : MonoBehaviour
         animWalk.SetBool("Play",true);
         animMove.SetBool("Play", true);
         StartCoroutine("Time");
-        
     }
 
     IEnumerator Time()
