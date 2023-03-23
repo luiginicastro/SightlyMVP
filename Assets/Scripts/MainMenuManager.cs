@@ -11,7 +11,6 @@ public class MainMenuManager : MonoBehaviour
     public GameObject SessionsMenu;
     public GameObject Profile;
     public GameObject Exposure;
-    public GameObject Sessions;
     public GameObject Settings;
 
     [Header("Session Sub-menus")]
@@ -33,7 +32,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(false);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(true);
         SettingsButton.SetActive(true);
 
@@ -52,7 +50,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(false);
         Profile.SetActive(true);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         SettingsButton.SetActive(true);
 
@@ -71,7 +68,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(true);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         SettingsButton.SetActive(true);
 
@@ -90,7 +86,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(true);
         Exposure.SetActive(false);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         Settings.SetActive(false);
         SettingsButton.SetActive(true);
@@ -110,7 +105,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(false);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         Settings.SetActive(false);
         SettingsButton.SetActive(false);
@@ -130,7 +124,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(false);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         Settings.SetActive(false);
         SettingsButton.SetActive(false);
@@ -161,7 +154,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(false);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         Settings.SetActive(false);
         SettingsButton.SetActive(false);
@@ -181,7 +173,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(false);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         Settings.SetActive(false);
         SettingsButton.SetActive(false);
@@ -201,7 +192,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(false);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         Settings.SetActive(false);
         SettingsButton.SetActive(false);
@@ -221,7 +211,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(false);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         Settings.SetActive(false);
         SettingsButton.SetActive(false);
@@ -241,7 +230,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(false);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         Settings.SetActive(false);
         SettingsButton.SetActive(false);
@@ -261,7 +249,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(false);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         Settings.SetActive(false);
         SettingsButton.SetActive(false);
@@ -281,7 +268,6 @@ public class MainMenuManager : MonoBehaviour
         MainMenu.SetActive(false);
         Exposure.SetActive(false);
         Profile.SetActive(false);
-        Sessions.SetActive(false);
         SessionsMenu.SetActive(false);
         Settings.SetActive(false);
         SettingsButton.SetActive(false);

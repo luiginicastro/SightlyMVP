@@ -13,6 +13,8 @@ public class exposureSession : MonoBehaviour
     public float videoRotation;
     public GameObject _rigPosition;
     public Quaternion origRot;
+    public GameObject XRRig;
+    public GameObject Camera;
 
     public TextAsset srtFile;
 
@@ -20,8 +22,8 @@ public class exposureSession : MonoBehaviour
 
     public void Start()
     {
-        _videoPlayer = GameObject.FindGameObjectWithTag("360Camera").GetComponent<VideoPlayer>();
-        _rigPosition = GameObject.FindGameObjectWithTag("XRRig");
+        _videoPlayer = Camera.GetComponent<VideoPlayer>();
+        _rigPosition = XRRig;
     }
 
     public void Update()
