@@ -16,7 +16,6 @@ public class MainMenuManager : MonoBehaviour
     [Header("Session Sub-menus")]
     public GameObject interviews;
     public GameObject classQuestion;
-    public GameObject socialGatherings;
     public GameObject criticism;
     public GameObject introductions;
     public GameObject beingTeased;
@@ -37,7 +36,6 @@ public class MainMenuManager : MonoBehaviour
 
         interviews.SetActive(false);
         classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
@@ -55,7 +53,6 @@ public class MainMenuManager : MonoBehaviour
 
         interviews.SetActive(false);
         classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
@@ -73,7 +70,6 @@ public class MainMenuManager : MonoBehaviour
 
         interviews.SetActive(false);
         classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
@@ -92,7 +88,6 @@ public class MainMenuManager : MonoBehaviour
 
         interviews.SetActive(false);
         classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
@@ -111,7 +106,6 @@ public class MainMenuManager : MonoBehaviour
 
         interviews.SetActive(false);
         classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
@@ -130,7 +124,6 @@ public class MainMenuManager : MonoBehaviour
 
         interviews.SetActive(false);
         classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
@@ -143,7 +136,6 @@ public class MainMenuManager : MonoBehaviour
     {
         interviews.SetActive(true);
         classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
@@ -162,7 +154,6 @@ public class MainMenuManager : MonoBehaviour
     {
         interviews.SetActive(false);
         classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
@@ -177,30 +168,10 @@ public class MainMenuManager : MonoBehaviour
         Settings.SetActive(false);
         SettingsButton.SetActive(false);
     }
-    public void SocialGatheringsLevels()  // reveals...
-    {
-        interviews.SetActive(false);
-        classQuestion.SetActive(false);
-        socialGatherings.SetActive(true);
-        criticism.SetActive(false);
-        introductions.SetActive(false);
-        beingTeased.SetActive(false);
-        publicSpeaking.SetActive(false);
-
-        LogIn.SetActive(false);
-        SignUp.SetActive(false);
-        MainMenu.SetActive(false);
-        Exposure.SetActive(false);
-        Profile.SetActive(false);
-        SessionsMenu.SetActive(false);
-        Settings.SetActive(false);
-        SettingsButton.SetActive(false);
-    }
     public void CriticismLevels()  // reveals...
     {
         interviews.SetActive(false);
         classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
         criticism.SetActive(true);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
@@ -219,7 +190,6 @@ public class MainMenuManager : MonoBehaviour
     {
         interviews.SetActive(false);
         classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
         criticism.SetActive(false);
         introductions.SetActive(true);
         beingTeased.SetActive(false);
@@ -238,7 +208,6 @@ public class MainMenuManager : MonoBehaviour
     {
         interviews.SetActive(false);
         classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(true);
@@ -253,11 +222,10 @@ public class MainMenuManager : MonoBehaviour
         Settings.SetActive(false);
         SettingsButton.SetActive(false);
     }
-    public void Session7Levels()  // reveals...
+    public void ClassQuestionsLevels()  // reveals...
     {
         interviews.SetActive(false);
-        classQuestion.SetActive(false);
-        socialGatherings.SetActive(false);
+        classQuestion.SetActive(true);
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
