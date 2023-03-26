@@ -229,7 +229,7 @@ public class MainMenuManager : MonoBehaviour
         criticism.SetActive(false);
         introductions.SetActive(false);
         beingTeased.SetActive(false);
-        publicSpeaking.SetActive(true);
+        publicSpeaking.SetActive(false);
 
         LogIn.SetActive(false);
         SignUp.SetActive(false);
