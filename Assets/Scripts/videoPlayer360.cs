@@ -105,7 +105,6 @@ public class videoPlayer360 : MonoBehaviour
 
     private void OnVideoEnd() // this makes the session false, stops the video, resets the skybox, turns on the room and slides
     {
-        Debug.Log("OnVideoEnd");
         inSession = false;
         StopVideo();
         RenderSettings.skybox = skyboxTemplate;

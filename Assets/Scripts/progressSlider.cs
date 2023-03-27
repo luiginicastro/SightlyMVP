@@ -27,8 +27,6 @@ public class progressSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if (_player.frameCount > 0)
         {
             loadingBar.fillAmount = (float)_player.frame / (float)_player.frameCount;

@@ -8215,6 +8215,7 @@ MonoBehaviour:
   Camera: {fileID: 1526554951}
   srtFile: {fileID: 0}
   _videoPlayer: {fileID: 0}
+  environment: production
 --- !u!95 &294752137
 Animator:
   serializedVersion: 4
@@ -8324,6 +8325,18 @@ MonoBehaviour:
       - m_Target: {fileID: 294752136}
         m_TargetAssemblyTypeName: 
         m_MethodName: selectVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 294752136}
+        m_TargetAssemblyTypeName: exposureSession, Assembly-CSharp
+        m_MethodName: SessionStarted
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18758,6 +18771,7 @@ MonoBehaviour:
   Camera: {fileID: 1526554951}
   srtFile: {fileID: 0}
   _videoPlayer: {fileID: 0}
+  environment: production
 --- !u!95 &653804438
 Animator:
   serializedVersion: 4
@@ -18867,6 +18881,18 @@ MonoBehaviour:
       - m_Target: {fileID: 653804437}
         m_TargetAssemblyTypeName: 
         m_MethodName: selectVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 653804437}
+        m_TargetAssemblyTypeName: exposureSession, Assembly-CSharp
+        m_MethodName: SessionStarted
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31237,6 +31263,7 @@ MonoBehaviour:
   Camera: {fileID: 1526554951}
   srtFile: {fileID: 0}
   _videoPlayer: {fileID: 0}
+  environment: production
 --- !u!95 &1139628172
 Animator:
   serializedVersion: 4
@@ -31346,6 +31373,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1139628171}
         m_TargetAssemblyTypeName: 
         m_MethodName: selectVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1139628171}
+        m_TargetAssemblyTypeName: exposureSession, Assembly-CSharp
+        m_MethodName: SessionStarted
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -36194,6 +36233,7 @@ MonoBehaviour:
   Camera: {fileID: 1526554951}
   srtFile: {fileID: 0}
   _videoPlayer: {fileID: 0}
+  environment: production
 --- !u!95 &1346891141
 Animator:
   serializedVersion: 4
@@ -36303,6 +36343,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1346891140}
         m_TargetAssemblyTypeName: 
         m_MethodName: selectVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1346891140}
+        m_TargetAssemblyTypeName: exposureSession, Assembly-CSharp
+        m_MethodName: SessionStarted
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -38803,6 +38855,7 @@ GameObject:
   - component: {fileID: 1512636996}
   - component: {fileID: 1512636995}
   - component: {fileID: 1512636994}
+  - component: {fileID: 1512636998}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -38914,6 +38967,20 @@ MonoBehaviour:
   m_CameraFloorOffsetObject: {fileID: 1149165161}
   m_RequestedTrackingOriginMode: 0
   m_CameraYOffset: 1.1176
+--- !u!114 &1512636998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512636992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34e38688feee2343a3592fe4ac24459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigPosition: {fileID: 0}
+  origRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1516140349
 GameObject:
   m_ObjectHideFlags: 0
@@ -39560,14 +39627,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c663ea101865fab46b252ba788d6a550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeElapsedMinutes: {fileID: 695019516}
-  timeElapsedSeconds: {fileID: 339269372}
-  totalTimeMinutes: {fileID: 1976532720}
-  totalTimeSeconds: {fileID: 816340163}
-  handTimeElapsedMinutes: {fileID: 1542712567}
-  handTimeElapsedSeconds: {fileID: 492426533}
-  handTotalTimeMinutes: {fileID: 1604323656}
-  handTotalTimeSeconds: {fileID: 1945079571}
+  timeElapsedMinutes: {fileID: 812841707}
+  timeElapsedSeconds: {fileID: 1396970667}
+  totalTimeMinutes: {fileID: 1764972230}
+  totalTimeSeconds: {fileID: 361033069}
+  handTimeElapsedMinutes: {fileID: 1499347812}
+  handTimeElapsedSeconds: {fileID: 1727673913}
+  handTotalTimeMinutes: {fileID: 672028655}
+  handTotalTimeSeconds: {fileID: 864979675}
   _player: {fileID: 1526554953}
 --- !u!114 &1526554955
 MonoBehaviour:
@@ -39576,7 +39643,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526554951}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 374462cffce242f19e22da64af7c8b88, type: 3}
   m_Name: 
@@ -43940,8 +44007,8 @@ MonoBehaviour:
   contentSlides: {fileID: 285885550}
   pauseMenu: {fileID: 1457423987}
   inSession: 0
-  handTimer: {fileID: 2017304362}
-  _rigRot: {fileID: 233878563}
+  handTimer: {fileID: 984880991}
+  _rigRot: {fileID: 1512636998}
   _player: {fileID: 1526554953}
 --- !u!1 &1691258293
 GameObject:
@@ -49789,6 +49856,7 @@ MonoBehaviour:
   Camera: {fileID: 1526554951}
   srtFile: {fileID: 4900000, guid: e5efa0375c5361647a6659d3c0f94f5a, type: 3}
   _videoPlayer: {fileID: 0}
+  environment: production
 --- !u!95 &1867194779
 Animator:
   serializedVersion: 4
@@ -49898,6 +49966,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1867194778}
         m_TargetAssemblyTypeName: 
         m_MethodName: selectVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1867194778}
+        m_TargetAssemblyTypeName: exposureSession, Assembly-CSharp
+        m_MethodName: SessionStarted
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -54985,8 +55065,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285885553}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: PublicSpeakingLevels
+        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
+        m_MethodName: ClassQuestionsLevels
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -59132,6 +59212,7 @@ MonoBehaviour:
   Camera: {fileID: 1526554951}
   srtFile: {fileID: 4900000, guid: 941353e58006c1646b847e1764d6d556, type: 3}
   _videoPlayer: {fileID: 0}
+  environment: production
 --- !u!95 &2143292803
 Animator:
   serializedVersion: 4
@@ -59241,6 +59322,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2143292802}
         m_TargetAssemblyTypeName: 
         m_MethodName: selectVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2143292802}
+        m_TargetAssemblyTypeName: exposureSession, Assembly-CSharp
+        m_MethodName: SessionStarted
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

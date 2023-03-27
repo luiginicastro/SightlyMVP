@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using A11YTK;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
+using Unity.Services.Core.Environments;
+using System;
 
 public class exposureSession : MonoBehaviour
 {
@@ -19,11 +23,22 @@ public class exposureSession : MonoBehaviour
     public TextAsset srtFile;
 
     public VideoPlayer _videoPlayer;
-
-    public void Start()
+    public string environment = "production";
+    public async void Start()
     {
         _videoPlayer = Camera.GetComponent<VideoPlayer>();
         _rigPosition = XRRig;
+
+        try
+        {
+            var options = new InitializationOptions().SetEnvironmentName(environment);
+
+            await UnityServices.InitializeAsync(options);
+        }
+        catch (Exception exception)
+        {
+            // An error occurred during services initialization.
+        }
     }
 
     public void Update()
@@ -33,25 +48,46 @@ public class exposureSession : MonoBehaviour
 
     public void selectVideo()
     {
+        _videoPlayer.GetComponent<SubtitleVideoPlayerController>().subtitleTextAsset = srtFile;
         _videoPlayer.clip = exposureClip;
         RotateOrientation(videoRotation);
-        _videoPlayer.GetComponent<SubtitleVideoPlayerController>().subtitleTextAsset = srtFile;
-
     }
 
     public void OnVideoEnd() // this makes the session false, stops the video, resets the skybox, turns on the room and slides
     {
         completedSession.SetActive(true);
+        SessionEnded();
     }
 
     void EndReached(UnityEngine.Video.VideoPlayer vp) // when the video ends it runs the script
     {
         OnVideoEnd();
+        
     }
 
     public void RotateOrientation(float yRot)
     {
         _rigPosition.transform.eulerAngles = new Vector3(_rigPosition.transform.eulerAngles.x, yRot, _rigPosition.transform.eulerAngles.z);
+    }
+
+    
+
+    public void SessionStarted()
+    {
+       AnalyticsService.Instance.CustomData("sessionStarted", new Dictionary<string, object>
+        {
+            {"Session", name}
+        });
+        Events.Flush();
+    }
+
+    public void SessionEnded()
+    {
+        AnalyticsService.Instance.CustomData("sessionFinished", new Dictionary<string, object>
+        {
+            {"Session", name}
+        });
+        Events.Flush();
     }
 
 }
