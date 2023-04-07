@@ -15,8 +15,8 @@ public class videoPlayer360 : MonoBehaviour
     
     [SerializeField] private GameObject structure;
     [SerializeField] private GameObject contentSlides;
+    [SerializeField] private GameObject sessionEndedMenu;
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject sessionEndMenu;
 
     public bool inSession; // this determines if the user is in a session so scripts can run
 
@@ -101,10 +101,10 @@ public class videoPlayer360 : MonoBehaviour
 
     void EndReached(UnityEngine.Video.VideoPlayer vp) // when the video ends it runs the script
     {
-        sessionEndMenu.SetActive(true);
+        sessionEndedMenu.SetActive(true);
     }
 
-    private void OnVideoEnd() // this makes the session false, stops the video, resets the skybox, turns on the room and slides
+    public void OnVideoEnd() // this makes the session false, stops the video, resets the skybox, turns on the room and slides
     {
         inSession = false;
         StopVideo();
@@ -115,7 +115,7 @@ public class videoPlayer360 : MonoBehaviour
         pauseMenu.SetActive(false);
         _rigRot.origPos();
         handTimer.SetActive(false);
-        sessionEndMenu.SetActive(false);
+        sessionEndedMenu.SetActive(false);
     }
 
     public void ReleaseRenderTexture() // this is how it resets the texture for the skybox
@@ -126,21 +126,4 @@ public class videoPlayer360 : MonoBehaviour
         UnityEngine.RenderTexture.active = rt;
         RenderSettings.skybox = skyboxTemplate;
     }
-
-    public void ExitVideoTriggered() //if the user chooses to leave video early it makes the session false, stops the video, resets the skybox, turns on the room and slides
-    {
-        inSession = false;
-        StopVideo();
-        RenderSettings.skybox = skyboxTemplate;
-        ReleaseRenderTexture(); // this resets the texture for the Skybox after each video
-        structure.SetActive(true);
-        contentSlides.SetActive(true);
-        pauseMenu.SetActive(false);
-        _rigRot.origPos();
-        handTimer.SetActive(false);
-        sessionEndMenu.SetActive(false);
-    }
-
-   
-    
 }

@@ -11,7 +11,7 @@ using System;
 
 public class exposureSession : MonoBehaviour
 {
-    public string name;
+    public string sessionName;
     public GameObject currentSession;
     public VideoClip exposureClip;
     public GameObject completedSession;
@@ -26,7 +26,7 @@ public class exposureSession : MonoBehaviour
     public VideoPlayer _videoPlayer;
     public string environment = "production";
     public async void Start()
-    {
+    { 
         _videoPlayer = Camera.GetComponent<VideoPlayer>();
         _rigPosition = XRRig;
 
@@ -40,10 +40,7 @@ public class exposureSession : MonoBehaviour
         {
             // An error occurred during services initialization.
         }
-    }
 
-    public void Update()
-    { 
         _videoPlayer.loopPointReached += EndReached;
     }
 
@@ -62,7 +59,6 @@ public class exposureSession : MonoBehaviour
     void EndReached(UnityEngine.Video.VideoPlayer vp) // when the video ends it runs the script
     {
         OnVideoEnd();
-        
     }
 
     public void RotateOrientation(float yRot)
@@ -70,24 +66,23 @@ public class exposureSession : MonoBehaviour
         _rigPosition.transform.eulerAngles = new Vector3(_rigPosition.transform.eulerAngles.x, yRot, _rigPosition.transform.eulerAngles.z);
     }
 
-    
-
     public void SessionStarted()
     {
        AnalyticsService.Instance.CustomData("sessionStarted", new Dictionary<string, object>
         {
-            {"Session", name}
+            {"Session", sessionName}
         });
         Events.Flush();
+        Debug.Log("session " + name + " started");
 
-        currentSession.name = name;
+        currentSession.name = sessionName;
     }
 
     public void SessionEnded()
     {
         AnalyticsService.Instance.CustomData("sessionFinished", new Dictionary<string, object>
         {
-            {"Session", name}
+            {"Session", sessionName}
         });
         Events.Flush();
     }

@@ -20,6 +20,7 @@ public class sessionTracker : MonoBehaviour
             {"Session", sessionName}
         });
         Events.Flush();
+        Debug.Log("session " + name + " started");
     }
 
     public void SessionEnded()
