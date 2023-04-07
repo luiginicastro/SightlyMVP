@@ -102,6 +102,7 @@ public class videoPlayer360 : MonoBehaviour
     void EndReached(UnityEngine.Video.VideoPlayer vp) // when the video ends it runs the script
     {
         sessionEndedMenu.SetActive(true);
+        inSession = false;
     }
 
     public void OnVideoEnd() // this makes the session false, stops the video, resets the skybox, turns on the room and slides

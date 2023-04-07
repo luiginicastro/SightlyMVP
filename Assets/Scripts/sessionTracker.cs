@@ -52,4 +52,9 @@ public class sessionTracker : MonoBehaviour
         });
         Events.Flush();
     }
+
+    public void QuitApp()
+    {
+        Application.Quit();
+    }
 }

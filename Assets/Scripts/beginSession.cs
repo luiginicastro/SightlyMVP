@@ -30,6 +30,7 @@ public class beginSession : MonoBehaviour
         SessionMenu.SetActive(false);
         SessionsParent.SetActive(true);
     }
+    
 
     public void startSession2() // reveals this session
     {
