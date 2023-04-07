@@ -12,6 +12,7 @@ using System;
 public class exposureSession : MonoBehaviour
 {
     public string name;
+    public GameObject currentSession;
     public VideoClip exposureClip;
     public GameObject completedSession;
     public float videoRotation;
@@ -56,7 +57,6 @@ public class exposureSession : MonoBehaviour
     public void OnVideoEnd() // this makes the session false, stops the video, resets the skybox, turns on the room and slides
     {
         completedSession.SetActive(true);
-        SessionEnded();
     }
 
     void EndReached(UnityEngine.Video.VideoPlayer vp) // when the video ends it runs the script
@@ -79,6 +79,8 @@ public class exposureSession : MonoBehaviour
             {"Session", name}
         });
         Events.Flush();
+
+        currentSession.name = name;
     }
 
     public void SessionEnded()
